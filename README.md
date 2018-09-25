@@ -7,3 +7,4 @@
 > global.a = 200; //全局变量  
 > console.log(a);  
 > console.log(global.a);  
+> console.log(__filename); //当前模块被解析过后的绝对位置
