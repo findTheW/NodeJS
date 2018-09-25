@@ -14,3 +14,12 @@
 6. 跨模块访问变量 :  
    ① （不推荐）用global.变量名存储变量，会污染全局变量  
    ② 使用模块对象 module （里面有一个子对象exports，可以通过这个子对象对变量进行对外暴露）
+   > 
+   ``` javascript
+   /* 1.js */
+   var a = 100;
+   module.exports.a = a;//将变量放在module的exports对象中向外暴露
+   /* 2.js */
+   var req = require("./1.js"); //返回值是1.js的exports对象
+   console.log(req);
+   ```
