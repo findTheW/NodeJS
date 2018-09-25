@@ -77,4 +77,7 @@
       ``` javascript
       var bf = new Buffer('maiov','utf-8');
       console.log(bf);//<Buffer 6d 61 69 6f 76>
+      for(var i=0;i<bf.length;i++){
+          console.log( string.fromCharCode(bf[i]) );
+      } //输出的是mai三个字母的Ascall码值，再转为正常的字母形式
       ```
