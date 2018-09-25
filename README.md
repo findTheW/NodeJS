@@ -8,3 +8,5 @@
 > console.log(a);  
 > console.log(global.a);  
 > console.log(__filename); //当前模块被解析过后的绝对位置
+5. 模块加载系统 ： require("模块地址")  
+6. 跨模块访问变量
