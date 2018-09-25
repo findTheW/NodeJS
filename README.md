@@ -41,4 +41,21 @@
    ②execPath：开启当前进程的绝对路径；  
    ③env：返回用户环境信息；  
    ④pid：当前运行程序进程的pid；  
-   ....  
+   ... 
+   ``` javascript
+   //默认情况下，输入流是关闭的，要监听处理输入流数据，首先要开启输入流
+   process.stdin.resume();
+   //输出流，输出到命令行
+   process.stdout.write("请输入a的值：");
+   var a,b;
+   //用于监听用户的输入数据
+   process.stdin.on("data",function (chunk) { //接受到的返回值chunk是输入的值
+       if(!a){
+           a = Number(chunk);
+           process.stdout.write("请输入b的值：");
+       }else{
+           b = Number(chunk);
+           process.stdout.write("a+b的和为：" + (a + b))
+       }
+   });
+   ```
