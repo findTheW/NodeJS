@@ -1,4 +1,4 @@
-### NodeJS的基础知识
+## NodeJS的基础知识
 1. 以 EcmaScript 为基础，扩展为操作os（操作系统）、file（文件系统）、net（网络）、database（数据库）等...
 2. node中的顶层对象，global对象。
 3. 一个文件就是一个模块，每个模块都有自己的作用域
@@ -28,7 +28,7 @@
    console.log(exports === module.exports); //true
    ```
 
-### Global对象中的部分属性
+## Global对象中的部分属性
 1. __filename: 返回当前模块文件解析后的绝对路径，虽然在global里，但是这个属性是模块作用域下的。 （文件路径）
 2. __dirname:  返回当前模块文件所在目录解析后的绝对路径，虽然在global里，但是这个属性是模块作用域下的。（文件所在目录路径）
    ```javascript
