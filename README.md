@@ -21,5 +21,9 @@
    module.exports.a = a;//将变量放在module的exports对象中向外暴露
    /* 2.js */
    var req = require("./1.js"); //返回值是1.js的exports对象
-   console.log(req);
+   console.log(req); // {a: 100}
+   ```
+7. 在模块作用域中，有一个内置模块对象exports，作用跟module.exports是一样的
+   ``` javascript
+   console.log(exports === module.exports); //true
    ```
