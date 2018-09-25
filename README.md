@@ -68,5 +68,13 @@
       bf[6] = 10; //超出Buffer对象长度，内容不会变化
       console.log(bf); // <Buffer 00 00 00 00 00>
       ```
-   ②new Buffer(array) : 
-   ③
+   ②~new Buffer(array)~ :  创建一个Buffer对象，使用一个8位字节array数组。
+      ``` javascript
+      var bf = new Buffer([1,2,3]);
+      console.log(bf);//<Buffer 01 02 03>
+      ```
+   ③~new Buffer(str,[encoding])~ : 创建一个Buffer对象，其中包含着给定的str字符串，encoding编码方式默认是"utf-8"。
+      ``` javascript
+      var bf = new Buffer('maiov','utf-8');
+      console.log(bf);//<Buffer 6d 61 69 6f 76>
+      ```
