@@ -59,3 +59,14 @@
        }
    });
    ```
+4. Buffer类：操作二进制数据流  
+   --以下几个都被废弃，去官网找代替方法--
+   ①~new Buffer(size)~ : 创建一个Buffer对象，并为这个对象分配大小。长度是固定的，不能进行修改。【结果为十六进制】
+      ``` javascript
+      var bf = new Buffer(5);
+      console.log(bf); // <Buffer 00 00 00 00 00>
+      bf[6] = 10; //超出Buffer对象长度，内容不会变化
+      console.log(bf); // <Buffer 00 00 00 00 00>
+      ```
+   ②new Buffer(array) : 
+   ③
