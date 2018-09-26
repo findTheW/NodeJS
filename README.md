@@ -81,14 +81,14 @@
           console.log( String.fromCharCode(bf[i]) );
       } //输出的是mai三个字母的Ascall码值，再转为正常的字母形式
       ```
-   (2) bf.length ：返回的是字符的长度，而不是字符串的
+   (2) bf.length ：返回的是字符的长度，而不是字符串的  
       ``` javascript
       var bf = new Buffer('mai','utf-8');
       console.log(bf.length);//3 
       var buf = new Buffer('小明','utf-8')
       console.log(buf.length); //6，一个文字等于三个字符
       ```
-  （3）buf.write(要写入的字符串，从第几位写入，写入的长度，写入字符串的编码)
+   (3) buf.write(要写入的字符串，从第几位写入，写入的长度，写入字符串的编码)
       ``` javascript
       var buf = new Buffer("abcd");
       console.log(buf);    //<Buffer 61 62 63 64>
@@ -96,7 +96,7 @@
       //<Buffer 61 58 59 64> 偏移量1，所以从第二位开始写入，写入长度为2，所以只写入两个
       console.log(buf);
       ```
-   (4)buf.toString(编码，开始位置，结束位置)  
+   (4) buf.toString(编码，开始位置，结束位置)  
       buf.toJSON()
       ``` javascript
       //将编码转换为string字符串
