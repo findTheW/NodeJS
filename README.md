@@ -88,3 +88,11 @@
       var buf = new Buffer('小明','utf-8')
       console.log(buf.length); //6，一个文字等于三个字符
       ```
+   （3）buf.write(要写入的字符串，从第几位写入，写入的长度，写入字符串的编码)
+      ``` javascript
+      var buf = new Buffer("abcd");
+      console.log(buf);    //<Buffer 61 62 63 64>
+      buf.write("XYZ",1,2);
+      //<Buffer 61 58 59 64> 偏移量1，所以从第二位开始写入，写入长度为2，所以只写入两个
+      console.log(buf);
+      ```
