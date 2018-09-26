@@ -96,10 +96,21 @@
       //<Buffer 61 58 59 64> 偏移量1，所以从第二位开始写入，写入长度为2，所以只写入两个
       console.log(buf);
       ```
-   (4)buf.toString(编码，开始位置，结束位置)
+   (4)buf.toString(编码，开始位置，结束位置)  
+      buf.toJSON()
       ``` javascript
       //将编码转换为string字符串
       var buf = new Buffer("abcd");
       console.log(buf.toString()); //abcd
       console.log(buf.toString('utf-8',0,2)); //ab 
+      //转为JSON格式
+      console.log(buf.toJSON()); //{ type: 'Buffer', data: [ 97, 98, 99, 100 ] }
      ```
+   (5)buf.slice(开始位，结束位) ： 对buffer进行截取
+      ``` javascript
+      var buf = new Buffer("abcd");
+      console.log(buf.slice(2,3)); //c
+      ```
+      [^2]注意，修改这个新建的 Buffer 切片，也会同时修改原始的 Buffer 的内存，因为这两个对象所分配的内存是重叠的。
+   (6)被拷贝的buffer→buf.copy(拷贝进的buf，开始拷贝进的偏移量，开始拷贝的偏移量，结束拷贝的偏移量)
+   
