@@ -60,7 +60,7 @@
    });
    ```
 4. Buffer类：操作二进制数据流  
-   **以下几个都被废弃，去官网找代替方法**  
+   (1)**以下几个都被废弃，去官网找代替方法**  
    ①~new Buffer(size)~ : 创建一个Buffer对象，并为这个对象分配大小。长度是固定的，不能进行修改。【结果为十六进制】
       ``` javascript
       var bf = new Buffer(5);
@@ -78,6 +78,13 @@
       var bf = new Buffer('maiov','utf-8');
       console.log(bf);//<Buffer 6d 61 69 6f 76>
       for(var i=0;i<bf.length;i++){
-          console.log( string.fromCharCode(bf[i]) );
+          console.log( String.fromCharCode(bf[i]) );
       } //输出的是mai三个字母的Ascall码值，再转为正常的字母形式
+      ```
+   (2) bf.length ：返回的是字符的长度，而不是字符串的
+      ``` javascript
+      var bf = new Buffer('mai','utf-8');
+      console.log(bf.length);//3 
+      var buf = new Buffer('小明','utf-8')
+      console.log(buf.length); //6，一个文字等于三个字符
       ```
