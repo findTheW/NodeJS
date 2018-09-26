@@ -112,7 +112,19 @@
       console.log(buf.slice(2,3)); //c
       ```
       [^2] 注意，修改这个新建的 Buffer 切片，也会同时修改原始的 Buffer 的内存，因为这两个对象所分配的内存是重叠的。
-   (6)被拷贝的buffer→buf.copy(拷贝进的buf，开始拷贝进的偏移量，开始拷贝的偏移量，结束拷贝的偏移量)  
-   ### Buffer的类方法（静态方法）
-   - Buffer.isBuffer（对象）:   
-      判断一个对象是否是Buffer对象，返回true或false。
+   (6)被拷贝的buffer→buf.copy(拷贝进的buf，开始拷贝进的偏移量，开始拷贝的偏移量，结束拷贝的偏移量)
+   
+### Buffer的类方法（静态方法）
+- Buffer.isBuffer（对象）:   
+   判断一个对象是否是Buffer对象，返回true或false。
+- Buffer.byteLength(对象) :  
+   返回buffer对象的字节长度。
+- Buffer.concat(buffer对象数组[,规定拼接后的长度]) :  
+   将数组里的buffer对象拼接起来。
+   ``` javascript
+   var buf1 = new Buffer("abc");
+   var buf2 = new Buffer("def");
+   var list = [buf1,buf2];
+   console.log(list);// [ <Buffer 61 62 63>, <Buffer 64 65 66> ]
+   console.log(Buffer.concat(list));// <Buffer 61 62 63 64 65 66>
+   ```
