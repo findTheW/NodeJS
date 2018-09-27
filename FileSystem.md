@@ -26,7 +26,7 @@ fs.open('1.txt','r',function (err, fd) {
 });
 console.log('ok');
 ```
-异步操作需要一定的时间，所以会先输出ok，在执行打开文件后的操作。  
+```异步操作需要一定的时间，所以会先输出ok，在执行打开文件后的操作。```  
 2.2 **同步打开一个文件**  
 ``` javascript
 /*   
@@ -41,9 +41,9 @@ var fs = require('fs');
 var fd = fs.openSync('1.txt','r');
 console.log(fd); //返回值是fd，也就是打开文件的标识
 ```
-同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。
+```同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。```  
 3.  **读取文件**  
-将文件中的内容读取到buffer对象中。  
+```将文件中的内容读取到buffer对象中。```  
 ``` javascript
 /*
 * fs.read(fd, buffer, offset, length, position, callback)
