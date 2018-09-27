@@ -42,8 +42,8 @@ var fd = fs.openSync('1.txt','r');
 console.log(fd); //返回值是fd，也就是打开文件的标识
 ```
 ```同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。```  
-3. **写入文件**
->     如果filename文件存在，则直接写入data数据，如果不存在，则创建新文件后写入。
+3. **写入文件**  
+```**如果filename文件存在，则直接写入data数据，如果不存在，则创建新文件后写入。**```  
 3.1 异步写入文件
 ``` javascript
 fs.writeFile(filename, data, [option], callback)
