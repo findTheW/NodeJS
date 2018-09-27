@@ -103,14 +103,14 @@ fs.open('1.txt', 'r+', function (err, fd) {
     }
 });
 ```
-   4.2 直接将数据写入文件
+    4.2 直接将数据写入文件
 ``` javascript
 var fs = require('fs');
 fs.open('1.txt', 'r+', function (err, fd) {
     if(err){
     }else{
        //直接将数据写入，2为写入文件的位置
-        fs.write(fd,"asb", 2 ,'utf-8')
+        fs.write(fd, "asb", 2 ,'utf-8')
         
     }
 });
