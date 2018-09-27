@@ -63,6 +63,16 @@ fs.writeFileSync(filename, data,  [option])
 fs.appendFile(filename, data, [option], callback)
 ```
 4. **检测指定路径的文件是否存在**
+4.1 **同步方式**
+``` javascript
+fs.existsSync(path)
+```
+``` javascript
+if (fs.existsSync('1.txt')){
+    console.log('存在')
+}
+```
+4.2 **异步方式**
 ``` javascript
 fs.exists(path, callback)
 ```
