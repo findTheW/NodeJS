@@ -44,24 +44,24 @@ console.log(fd); //返回值是fd，也就是打开文件的标识
 ```同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。```  
 3. **写入文件**  
 ```**如果filename文件存在，则直接写入data数据，如果不存在，则创建新文件后写入**```  
-    3.1 **异步写入文件**  
-    ``` javascript
-    fs.writeFile(filename, data, [option], callback)
-    ```
-    ``` javascript
-    var fs = require('fs');
-    fs.writeFile('1.txt', "sdafasdfs", function () {
-       console.log(arguments);//{ '0': null } 返回值err为null，说明没有错误，正常
-    });
-    ```
-    3.2 **同步写入文件**  
-    ``` javascript
-    fs.writeFileSync(filename, data,  [option])
-    ```
-    3.3 **将数据添加到文件尾部**  
-    ``` javascript
-    fs.appendFile(filename, data, [option], callback)
-    ```
+3.1 **异步写入文件**  
+``` javascript
+fs.writeFile(filename, data, [option], callback)
+```
+``` javascript
+var fs = require('fs');
+fs.writeFile('1.txt', "sdafasdfs", function () {
+   console.log(arguments);//{ '0': null } 返回值err为null，说明没有错误，正常
+});
+```
+3.2 **同步写入文件**  
+``` javascript
+fs.writeFileSync(filename, data,  [option])
+```
+3.3 **将数据添加到文件尾部**  
+``` javascript
+fs.appendFile(filename, data, [option], callback)
+```
 4. **检测指定路径的文件是否存在**
 ``` javascript
 fs.exists(path, callback)
