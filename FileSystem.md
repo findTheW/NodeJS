@@ -3,7 +3,8 @@
 ``` javascript
 var fs = require('fs');
 ```
-2. **异步打开一个文件**
+2. 
+**异步打开一个文件**
 ``` javascript
 /*   
 * fs.open(path, flags, [mode], callback)
@@ -26,8 +27,8 @@ fs.open('1.txt','r',function (err, fd) {
 });
 console.log('ok');
 ```
-异步操作需要一定的时间，所以会先输出ok，在执行打开文件后的操作。
-3. **同步打开一个文件**
+异步操作需要一定的时间，所以会先输出ok，在执行打开文件后的操作。  
+**同步打开一个文件**
 ``` javascript
 /*   
 * fs.openSync(path, flags, [mode])
@@ -42,3 +43,4 @@ var fd = fs.openSync('1.txt','r');
 console.log(fd); //返回值是fd，也就是打开文件的标识
 ```
 同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。
+4. 
