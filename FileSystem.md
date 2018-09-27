@@ -93,7 +93,11 @@ fs.readFile(filenmae, [options], callback)
 ``` javascript
 var fs = require('fs');
 fs.readFile('1.txt',function (err, data) {
-    console.log(data.toString()) //读取到的为buffer对象形式，所以要转化为字符串的形式
+    if(err){
+        console.log("文件读取失败");
+    }else{
+        console.log(data.toString());//读取到的为buffer对象形式，所以要转化为字符串的形式
+    }
 });
 ```
 6. **关闭文件**  
@@ -102,3 +106,17 @@ fs.readFile('1.txt',function (err, data) {
 * fs.close( fd,callback )
 * */
 ```
+7. **删除文件**
+``` javascript
+/*
+* fs.unlink( path,callback )
+* */
+```
+8. **文件重命名**
+``` javascript
+/*
+* fs.unlink( 旧文件名, 新文件名, callback )
+* */
+```
+**关于文件夹的操作看官方文档**  
+[Node.js v10.8.0 文档](http://nodejs.cn/api/)
