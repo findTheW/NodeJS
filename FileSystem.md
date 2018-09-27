@@ -86,7 +86,17 @@ fs.exists('1.txt', function (isExists) {
     }
 });
 ```
-5. **关闭文件**  
+5. **读取文件**
+``` javascript
+fs.readFile(filenmae, [options], callback)
+```
+``` javascript
+var fs = require('fs');
+fs.readFile('1.txt',function (err, data) {
+    console.log(data.toString()) //读取到的为buffer对象形式，所以要转化为字符串的形式
+});
+```
+6. **关闭文件**  
 ``` javascript
 /*
 * fs.close( fd,callback )
