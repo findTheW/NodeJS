@@ -120,3 +120,25 @@ fs.readFile('1.txt',function (err, data) {
 ```
 **关于文件夹的操作看官方文档**  
 [Node.js v10.8.0 文档](http://nodejs.cn/api/)
+
+9. **文件夹的读取**
+``` javascript
+var fs = require('fs');
+fs.readdir('../FileSystem',function (err, fileList) {
+    //遍历当前文件夹下的文件
+    fileList.forEach(function (f) {
+    //stat可返回文件的信息
+        fs.stat(f, function (err, info) {
+            switch (info.mode) {
+                //通过文件信息的mode，来判断出他是文件还是文件夹
+                case 16822:
+                    console.log('[文件夹]' + f);
+                    break;
+                case 33206:
+                    console.log('[文件]' + f);
+                    break;
+            }
+        });
+    })
+});
+```
