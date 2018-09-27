@@ -79,7 +79,7 @@ fs.open('1.txt','r+',function (err, fd) {
 });
 ```
 4. **写入文件**  
-4.1 将buffer中的数据写入文件
+    4.1 将buffer中的数据写入文件
 ``` javascript
 /*
 * fs.write(fd, buffer, offset, length, position, callback)
@@ -103,7 +103,7 @@ fs.open('1.txt', 'r+', function (err, fd) {
     }
 });
 ```
-4.2 直接将数据写入文件
+   4.2 直接将数据写入文件
 ``` javascript
 var fs = require('fs');
 fs.open('1.txt', 'r+', function (err, fd) {
@@ -114,4 +114,10 @@ fs.open('1.txt', 'r+', function (err, fd) {
         
     }
 });
+```
+5. **关闭文件**  
+``` javascript
+/*
+* fs.close( fd,callback )
+* */
 ```
