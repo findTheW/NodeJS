@@ -43,6 +43,7 @@ console.log(fd); //返回值是fd，也就是打开文件的标识
 ```
 ```同步方式打开会阻塞进程，所以要等同步方式后再执行下一步。```  
 3.  **读取文件**  
+**要对打开的文件进行写操作的时候，打开方式应该是读写操作**  
 ```将文件中的内容读取到buffer对象中。```  
 ``` javascript
 /*
@@ -60,7 +61,7 @@ console.log(fd); //返回值是fd，也就是打开文件的标识
 ```
 ``` javascript
 var fs = require('fs');
-fs.open('1.txt','r',function (err, fd) {
+fs.open('1.txt','r+',function (err, fd) {
 
     if(err){
         console.log("打开错误");
@@ -74,6 +75,43 @@ fs.open('1.txt','r',function (err, fd) {
             console.log( newBf );// <Buffer 61 62 63 64 35 36 37 38 39>
         })
 
+    }
+});
+```
+4. **写入文件**  
+4.1 将buffer中的数据写入文件
+``` javascript
+/*
+* fs.write(fd, buffer, offset, length, position, callback)
+*   fd : 打开的文件
+*   buffer : 要写入的数据
+*   offset : buffer随心中要写入的数据的起始位置
+*   length : 要写入的buffer数据的长度
+*   position : fd中的起始位置
+*   callback : 回调
+* */
+```
+``` javascript
+var fs = require('fs');
+fs.open('1.txt', 'r+', function (err, fd) {
+    if(err){
+    }else{
+        var bf = new Buffer('asd');
+        
+        fs.write(fd, bf, 0, 3, 0, function(){}); //将buffer中的数据写入文件了
+
+    }
+});
+```
+4.2 直接将数据写入文件
+``` javascript
+var fs = require('fs');
+fs.open('1.txt', 'r+', function (err, fd) {
+    if(err){
+    }else{
+       //直接将数据写入，2为写入文件的位置
+        fs.write(fd,"asb", 2 ,'utf-8')
+        
     }
 });
 ```
