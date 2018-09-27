@@ -72,7 +72,7 @@ if (fs.existsSync('1.txt')){
     console.log('存在')
 }
 ```
-4.2 **异步方式**
+4.2 **异步方式**  
 ``` javascript
 fs.exists(path, callback)
 ```
