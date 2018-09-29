@@ -1,4 +1,4 @@
-1. 通过加载http模块，创建服务器
+### 通过加载http模块，创建服务器
 ``` javascript
 /*
 * 1. 用户通过浏览器发送一个http请求到指定的服务器主机；
@@ -46,4 +46,24 @@ server.on('request', function ( req, res) {
 });
 
 console.log(server.address()); // { address: '::', family: 'IPv6', port: 8080 }
+```
+### url模块
+``` javascript
+var http = require('http');
+var url = require('url');
+
+var server = http.createServer();
+
+server.on('request', function (req, res) {
+    //req.url : 访问路径
+        // ?后面的部分 query string 查询字符串
+    //console.log(req.url); // 返回的是 /b 访问路径的后面部分
+
+    //会将url解析成一个对象，分成好几部分
+    //var urlStr = url.parse( "http://baidu.com/a/d" );
+
+    var urlStr = url.parse( req.url );
+    console.log(urlStr)
+});
+server.listen(8080, 'localhost');
 ```
