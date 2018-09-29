@@ -1,4 +1,4 @@
-
+**获取url，然后通过解析url地址，使其能够打开到相应的html文件**
 ``` javascript
 var http = require('http');
 var url = require('url');
